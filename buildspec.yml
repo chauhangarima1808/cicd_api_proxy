@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip3 install -r requirements.txt
+  build:
+    commands:
+      - python tests_app.py -v
+  post_build:
+    commands:
+      - ./start.sh
+artifacts:
+  files:
+    - '**/*'
